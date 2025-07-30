@@ -1,153 +1,360 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Orya Adventures</title>
-    <!-- Bootstrap CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="styles/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Orya Adventures - Your gateway to unforgettable travel experiences">
+  <title>Home | Orya Adventures</title>
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="styles/style.css">
+  
+  <style>
+    /* Homepage-specific styles */
+    .hero {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url('images/beach.jpg');
+      background-position: center;
+      background-size: cover;
+      min-height: 80vh;
+    }
+    
+    .adventure-card {
+      transition: all 0.3s ease;
+    }
+    
+    .adventure-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+    
+    .floating {
+      animation: float 3s ease-in-out infinite;
+    }
+    
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+      100% { transform: translateY(0); }
+    }
+  </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="/">Orya Adventures</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="/">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/explore">Explore</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/about">About Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/contact">Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <div class="hero">
-        <div class="container hero-content">
-            <h1 class="display-4 fw-bold">Welcome to Orya Adventures</h1>
-            <p class="lead">Discover handcrafted expeditions to the world's most breathtaking destinations</p>
-            <a href="/explore" class="btn btn-primary btn-lg">Explore our trips</a>
-        </div>
+  <!-- Skip to content link for accessibility -->
+  <a href="#main-content" class="skip-link visually-hidden">Skip to main content</a>
+  
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html" aria-label="Orya Adventures Home">
+        <i class="bi bi-compass me-2" aria-hidden="true"></i>Orya Adventures
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="index.html" aria-current="page">Home</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Explore</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="explore.html#mountains">Mountain Treks</a></li>
+              <li><a class="dropdown-item" href="explore.html#beaches">Beach Getaways</a></li>
+              <li><a class="dropdown-item" href="explore.html#cities">City Explorations</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+        </ul>
+      </div>
     </div>
+  </nav>
 
-   <!-- About us  -->
-    <div class="cointainer text-center py-4">
-        <p>Orya Adventures crafts immersive journeys for travelers who crave aunthenticity , adrenaline , and  awe-inspiring moments .No cookie-cutter vacatios here .Just you , the world , and a story waiting to be written .</p>
-    </div>
-
-    <!-- Adventure Cards Section -->
-    <section class="container my-5">
-        <h2 class="text-center mb-5">Our Adventures</h2>
-        <div class="row">
-            <!-- Beach Getaway Card -->
-            <div class="col-12 col-md-4 mb-4">
-                <a href="beach-getaways.html" class="adventure-card">
-                    <img src="images/sitting.jpg" alt="Beach Getaway">
-                    <div class="card-overlay">
-                        <h3>Beach Getaways</h3>
-                        <p>Relax on pristine beaches with crystal clear waters</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <span>Explore</span>
-                            <i class="bi bi-arrow-right"></i>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            
-            <!-- Mountain Treks Card -->
-            <div class="col-12 col-md-4 mb-4">
-                <a href="mountain-treks.html" class="adventure-card">
-                    <img src="images/mountain-trek.jpg" alt="Mountain Trek">
-                    <div class="card-overlay">
-                        <h3>Mountain Treks</h3>
-                        <p>Challenge yourself with breathtaking climbs</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <span>Explore</span>
-                            <i class="bi bi-arrow-right"></i>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            
-            <!-- City Explorations Card -->
-            <div class="col-12 col-md-4 mb-4">
-                <a href="city-explorations.html" class="adventure-card">
-                    <img src="images/cityscape .jpg" alt="City Exploration">
-                    <div class="card-overlay">
-                        <h3>City Explorations</h3>
-                        <p>Discover vibrant cultures and urban landscapes</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <span>Explore</span>
-                            <i class="bi bi-arrow-right"></i>
-                        </div>
-                    </div>
-                </a>
-            </div>
+  <!-- Hero Section -->
+<header class="hero" role="banner">
+  <div class="container h-100">
+    <div class="row h-100 align-items-center">
+      <div class="col-lg-8 text-white position-relative">
+        <!-- Background text element -->
+        <div class="hero-bg-text">EXPLORE</div>
+        
+        <h1 class="display-3 fw-bold mb-4 animate__animated animate__fadeInDown position-relative">Discover Your Next Adventure</h1>
+        <p class="lead mb-5 animate__animated animate__fadeIn animate__delay-1s position-relative">Experience the world's most breathtaking destinations with our expert guides</p>
+        <div class="d-flex gap-3 animate__animated animate__fadeIn animate__delay-2s position-relative">
+          <a href="explore.html" class="btn btn-dark btn-lg px-4">Explore Trips</a>
+          <a href="#featured" class="btn btn-outline-light btn-lg px-4">Learn More</a>
         </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+  <!-- Main Content -->
+  <main id="main-content">
+    <!-- Featured Adventures -->
+    <section id="featured" class="py-5 bg-teal-light">
+      <div class="container">
+        <h2 class="text-center mb-5">Featured Adventures</h2>
+        <div class="row g-4">
+          <!-- Adventure 1 -->
+          <div class="col-md-4">
+            <div class="card adventure-card h-100 border-0 shadow">
+              <img src="images/mountain-trek.jpg" class="card-img-top" alt="mountains" loading="lazy">
+              <div class="card-body">
+                <h3 class="card-title">Mountain Explorer</h3>
+                <p class="card-text">7-day trek through the breathtaking Swiss Alps with expert guides.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <span class="badge bg-teal">Bestseller</span>
+                  <a href="explore.html#mountains" class="btn btn-sm btn-outline-teal">Details</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Adventure 2 -->
+          <div class="col-md-4">
+            <div class="card adventure-card h-100 border-0 shadow">
+              <img src="images/sitting.jpg" class="card-img-top" alt="People sunbathing at the beach " loading="lazy">
+              <div class="card-body">
+                <h3 class="card-title">Island Paradise</h3>
+                <p class="card-text">5-day luxury beach getaway in the Maldives with private bungalows.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <span class="badge bg-teal">New</span>
+                  <a href="explore.html#beaches" class="btn btn-sm btn-outline-teal">Details</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Adventure 3 -->
+          <div class="col-md-4">
+            <div class="card adventure-card h-100 border-0 shadow">
+              <img src="images/cityscape .jpg" class="card-img-top" alt="Tokyo street" loading="lazy">
+              <div class="card-body">
+                <h3 class="card-title">Urban Explorer</h3>
+                <p class="card-text">4-day cultural immersion in Tokyo's vibrant neighborhoods.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <span class="badge bg-teal">Limited</span>
+                  <a href="explore.html#cities" class="btn btn-sm btn-outline-teal">Details</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-   <!-- Footer -->
-<footer class="py-5">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 text-center text-md-start">
-                <h5>Orya Adventures</h5>
-                <p>Creating unforgettable travel experiences since 2002.</p>
-            </div>
-            <div class="col-md-6 text-center text-md-end">
-                <div class="social-links mt-3 mt-md-0">
-                    <a href="https://twitter.com/@kandira33721" target="_blank" aria-label="Twitter">
-                        <i class="bi bi-twitter"></i>
-                    </a>
-                    <a href="https://instagram.com/MichaelKandira" target="_blank" aria-label="Instagram">
-                        <i class="bi bi-instagram"></i>
-                    </a>
-                    <a href="https://facebook.com/MichaelKandira" target="_blank" aria-label="Facebook">
-                        <i class="bi bi-facebook"></i>
-                    </a>
+    <!-- Why Choose Us -->
+    <section class="py-5">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 mb-4 mb-lg-0">
+            <h2 class="mb-4">Why Choose Orya Adventures?</h2>
+            <div class="accordion" id="whyChooseUs">
+              <div class="accordion-item">
+                <h3 class="accordion-header">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                    <i class="bi bi-award-fill me-2 text-teal"></i> Award-Winning Guides
+                  </button>
+                </h3>
+                <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#whyChooseUs">
+                  <div class="accordion-body">
+                    Our guides are certified professionals with extensive local knowledge and safety training.
+                  </div>
                 </div>
-            </div>
-            
-            <!-- NEW: Newsletter Signup Row -->
-            <div class="col-12 mt-4">
-                <div class="newsletter-signup p-4 rounded-3" style="background: rgba(255,255,255,0.1);">
-                    <h6 class="text-center mb-3">Get travel inspiration in your inbox</h6>
-                    <form class="row g-2 justify-content-center">
-                        <div class="col-md-6 col-lg-4">
-                            <input type="email" class="form-control" placeholder="Your email address" required>
-                        </div>
-                        <div class="col-md-3 col-lg-2">
-                            <button type="submit" class="btn btn-primary w-100">Subscribe</button>
-                        </div>
-                    </form>
-                    <p class="text-center small mt-2 mb-0">We respect your privacy .Unsubcribe anytime  </p>
+              </div>
+              <div class="accordion-item">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                    <i class="bi bi-globe-americas me-2 text-teal"></i> Sustainable Travel
+                  </button>
+                </h3>
+                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#whyChooseUs">
+                  <div class="accordion-body">
+                    We're committed to eco-friendly practices and supporting local communities.
+                  </div>
                 </div>
+              </div>
+              <div class="accordion-item">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                    <i class="bi bi-shield-check me-2 text-teal"></i> Safety First
+                  </button>
+                </h3>
+                <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#whyChooseUs">
+                  <div class="accordion-body">
+                    All our adventures meet international safety standards with emergency protocols.
+                  </div>
+                </div>
+              </div>
             </div>
-            
-            <div class="text-center mt-4 pt-3 border-top border-secondary">
-                <p class="mb-0">© 2025 Orya Adventures. All rights reserved.</p>
+          </div>
+          <div class="col-lg-6">
+            <div class="ratio ratio-16x9">
+              <img src="images/alpine.jpg" class="img-fluid rounded shadow" alt="Alpine mounatin" loading="lazy">
             </div>
+          </div>
         </div>
-    </div>
-</footer>
+      </div>
+    </section>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Testimonials -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center mb-5">What Our Travelers Say</h2>
+    <div class="row g-4 justify-content-center">
+      <!-- Testimonial 1 -->
+      <div class="col-md-4 d-flex">
+        <div class="card h-100 border-0 shadow-sm w-100">
+          <div class="card-body text-center d-flex flex-column align-items-center">
+            <div class="mb-3" style="width: 120px; height: 120px; overflow: hidden;">
+              <img src="images/testimonial2.jpg" 
+                   class="rounded-circle w-100 h-100 object-fit-cover border border-3 border-teal" 
+                   alt="Mary Johnson portrait" 
+                   loading="lazy">
+            </div>
+            <p class="fst-italic mb-3">"The Swiss Alps trek was life-changing! Our guide was incredibly knowledgeable."</p>
+            <div class="mt-auto">
+              <div class="text-teal fw-bold fs-5">Mary Johnson</div>
+              <div class="text-muted small">New York, USA</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Testimonial 2 -->
+      <div class="col-md-4 d-flex">
+        <div class="card h-100 border-0 shadow-sm w-100">
+          <div class="card-body text-center d-flex flex-column align-items-center">
+            <div class="mb-3" style="width: 120px; height: 120px; overflow: hidden;">
+              <img src="images/testimonial1.jpg" 
+                   class="rounded-circle w-100 h-100 object-fit-cover border border-3 border-teal" 
+                   alt="Jeff Pringles portrait" 
+                   loading="lazy">
+            </div>
+            <p class="fst-italic mb-3">"Best vacation ever! The Maldives package exceeded all expectations."</p>
+            <div class="mt-auto">
+              <div class="text-teal fw-bold fs-5">Jeff Pringles</div>
+              <div class="text-muted small">Toronto, Canada</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Testimonial 3 -->
+      <div class="col-md-4 d-flex">
+        <div class="card h-100 border-0 shadow-sm w-100">
+          <div class="card-body text-center d-flex flex-column align-items-center">
+            <div class="mb-3" style="width: 120px; height: 120px; overflow: hidden;">
+              <img src="images/testimonial3.jpg" 
+                   class="rounded-circle w-100 h-100 object-fit-cover border border-3 border-teal" 
+                   alt="Priya Patel portrait" 
+                   loading="lazy">
+            </div>
+            <p class="fst-italic mb-3">"Tokyo cultural tour showed us hidden gems we'd never find on our own."</p>
+            <div class="mt-auto">
+              <div class="text-teal fw-bold fs-5">Priya Patel</div>
+              <div class="text-muted small">London, UK</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- Quick Facts -->
+    <section class="py-5 bg-teal text-white">
+      <div class="container">
+        <div class="row text-center">
+          <div class="col-md-3 mb-4 mb-md-0">
+            <div class="display-4 fw-bold">15+</div>
+            <div class="h5">Years Experience</div>
+          </div>
+          <div class="col-md-3 mb-4 mb-md-0">
+            <div class="display-4 fw-bold">50K+</div>
+            <div class="h5">Happy Travelers</div>
+          </div>
+          <div class="col-md-3 mb-4 mb-md-0">
+            <div class="display-4 fw-bold">120+</div>
+            <div class="h5">Destinations</div>
+          </div>
+          <div class="col-md-3">
+            <div class="display-4 fw-bold">98%</div>
+            <div class="h5">Satisfaction Rate</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 mb-4 mb-lg-0">
+          <h3 class="h5 mb-3"><i class="bi bi-compass me-2"></i>Orya Adventures</h3>
+          <p>Creating unforgettable experiences since 2002.</p>
+          <!-- Newsletter Form (Second Form) -->
+          <form class="mt-4">
+            <div class="input-group mb-3">
+              <input type="email" class="form-control" placeholder="Your email" required>
+              <button class="btn btn-dark" type="submit">Subscribe</button>
+            </div>
+            <small class="text-white-50">Get travel deals and updates</small>
+          </form>
+        </div>
+        <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+          <h4 class="h5 mb-3">Explore</h4>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="explore.html#mountains" class="text-white-50">Mountain Treks</a></li>
+            <li class="mb-2"><a href="explore.html#beaches" class="text-white-50">Beach Getaways</a></li>
+            <li class="mb-2"><a href="explore.html#cities" class="text-white-50">City Explorations</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+          <h4 class="h5 mb-3">Company</h4>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="about.html" class="text-white-50">About Us</a></li>
+            <li class="mb-2"><a href="#" class="text-white-50">Our Team</a></li>
+            <li class="mb-2"><a href="#" class="text-white-50">Careers</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4">
+          <h4 class="h5 mb-3">Connect With Us</h4>
+          <div class="social-links mb-3">
+            <a href="#" class="text-white me-3" aria-label="Facebook"><i class="bi bi-facebook fs-5"></i></a>
+            <a href="#" class="text-white me-3" aria-label="Instagram"><i class="bi bi-instagram fs-5"></i></a>
+            <a href="#" class="text-white me-3" aria-label="Twitter"><i class="bi bi-twitter-x fs-5"></i></a>
+          </div>
+          <address>
+            <i class="bi bi-geo-alt-fill me-2"></i>123 Adventure Way, Portland, OR 97201<br>
+            <i class="bi bi-telephone-fill me-2"></i>(555) 123-4567<br>
+            <i class="bi bi-envelope-fill me-2"></i>hello@orya-adventures.com
+          </address>
+        </div>
+      </div>
+      <hr class="my-4 bg-secondary">
+      <div class="text-center text-white-50">
+        <p class="mb-0">&copy; 2025 Orya Adventures. All rights reserved. | <a href="#" class="text-white-50">Privacy Policy</a> | <a href="#" class="text-white-50">Terms</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  
+  
 </body>
 </html>
