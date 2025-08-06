@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Learn about Orya Adventures - our story, mission, and the team behind your unforgettable travel experiences">
+  <title>About Us | Orya Adventures</title>
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --teal: #20b2aa;
+      --teal-light: #88d8d4;
+      --teal-dark: #1a9c94;
+      --dark: #1a2a3a;
+      --light: #f8f9fa;
+      --accent: #ff6b6b;
+    }
+    
+    * {
+      font-family: 'Open Sans', sans-serif;
+    }
+    
+    h1, h2, h3, h4, h5 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+    }
+    
+    body {
+      color: #333;
+      background-color: #fff;
+    }
+    
+    .navbar {
+      background-color: var(--dark);
+      padding: 1rem 0;
+      transition: all 0.3s;
+    }
+    
+    .navbar.scrolled {
+      padding: 0.5rem 0;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    .navbar-brand {
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+    
+    .navbar-nav .nav-link {
+      font-weight: 500;
+      position: relative;
+      padding: 0.5rem 1rem;
+    }
+    
+    .navbar-nav .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 1rem;
+      width: 0;
+      height: 2px;
+      background: var(--teal);
+      transition: width 0.3s;
+    }
+    
+    .navbar-nav .nav-link:hover::after,
+    .navbar-nav .nav-link.active::after {
+      width: calc(100% - 2rem);
+    }
+    
+    .hero {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1501555088652-021faa106b9b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+      background-position: center;
+      background-size: cover;
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+    }
+    
+    .hero-content {
+      max-width: 650px;
+    }
+    
+    .btn-teal {
+      background-color: var(--teal);
+      color: white;
+      border: none;
+      padding: 0.8rem 2rem;
+      font-weight: 600;
+      transition: all 0.3s;
+    }
+    
+    .btn-teal:hover {
+      background-color: var(--teal-dark);
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    .btn-outline-teal {
+      border: 2px solid var(--teal);
+      color: var(--teal);
+      background: transparent;
+      padding: 0.8rem 2rem;
+      font-weight: 600;
+      transition: all 0.3s;
+    }
+    
+    .btn-outline-teal:hover {
+      background-color: var(--teal);
+      color: white;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    section {
+      padding: 5rem 0;
+    }
+    
+    .section-title {
+      position: relative;
+      display: inline-block;
+      margin-bottom: 3rem;
+      padding-bottom: 0.5rem;
+    }
+    
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 80px;
+      height: 4px;
+      background: var(--teal);
+      border-radius: 2px;
+    }
+    
+    .section-title.center::after {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    
+    .bg-teal-light {
+      background-color: rgba(136, 216, 212, 0.15);
+    }
+    
+    .team-member {
+      transition: all 0.3s ease;
+      height: 100%;
+    }
+    
+    .team-member:hover {
+      transform: translateY(-5px);
+    }
+    
+    .team-member img {
+      border: 3px solid var(--teal-light);
+      transition: all 0.3s ease;
+    }
+    
+    .team-member:hover img {
+      transform: scale(1.05);
+      border-color: var(--teal);
+    }
+    
+    .timeline {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .timeline::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 30px;
+      width: 2px;
+      background: var(--teal-light);
+    }
+    
+    .timeline-item {
+      position: relative;
+      padding-left: 4rem;
+      margin-bottom: 2.5rem;
+    }
+    
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: 20px;
+      top: 5px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: var(--teal);
+      border: 3px solid var(--teal-light);
+      z-index: 1;
+    }
+    
+    .value-card {
+      transition: all 0.3s ease;
+      height: 100%;
+      border: none;
+      border-radius: 12px;
+      overflow: hidden;
+      background: white;
+    }
+    
+    .value-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    }
+    
+    .value-icon {
+      font-size: 2.5rem;
+      color: var(--teal);
+      margin-bottom: 1.5rem;
+    }
+    
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--teal);
+      margin-bottom: 0.5rem;
+    }
+    
+    .stat-label {
+      font-size: 1rem;
+      color: #666;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    footer {
+      background-color: var(--dark);
+      color: white;
+      padding: 4rem 0 2rem;
+    }
+    
+    .footer-title {
+      position: relative;
+      padding-bottom: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .footer-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 3px;
+      background: var(--teal);
+    }
+    
+    .footer-links a {
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      display: block;
+      margin-bottom: 0.8rem;
+      transition: all 0.3s;
+    }
+    
+    .footer-links a:hover {
+      color: white;
+      padding-left: 5px;
+    }
+    
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.1);
+      color: white;
+      margin-right: 0.5rem;
+      transition: all 0.3s;
+    }
+    
+    .social-links a:hover {
+      background: var(--teal);
+      transform: translateY(-3px);
+    }
+    
+    .animate-fade {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    
+    @media (max-width: 768px) {
+      .timeline::before {
+        left: 15px;
+      }
+      
+      .timeline-item {
+        padding-left: 3rem;
+      }
+      
+      .timeline-item::before {
+        left: 8px;
+      }
+    }
+    
+    /* Animation keyframes */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .animate-fade-in {
+      animation: fadeIn 1s ease-out forwards;
+    }
+    
+    .delay-1 {
+      animation-delay: 0.2s;
+    }
+    
+    .delay-2 {
+      animation-delay: 0.4s;
+    }
+    
+    .delay-3 {
+      animation-delay: 0.6s;
+    }
+  </style>
+</head>
+<body>
+  <!-- Skip to content link for accessibility -->
+  <a href="#main-content" class="skip-link visually-hidden position-absolute top-0 start-0 p-2 bg-dark text-white" style="transform: translateY(-100%); transition: transform 0.3s;">Skip to main content</a>
+  
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="../index.html" aria-label="Orya Adventures Home">
+        <i class="bi bi-compass me-2" aria-hidden="true"></i>Orya Adventures
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="../index.html">Home</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Explore
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="explore.html#mountains">Mountains</a></li>
+              <li><a class="dropdown-item" href="explore.html#beaches">Beaches</a></li>
+              <li><a class="dropdown-item" href="explore.html#cities">Cities</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="about.html" aria-current="page">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero" role="banner">
+    <div class="container">
+      <div class="hero-content text-white animate-fade animate-fade-in">
+        <h1 class="display-3 fw-bold mb-4">Our Story</h1>
+        <p class="lead mb-5">Discover the passion behind Orya Adventures and the team dedicated to creating unforgettable journeys</p>
+        <div class="d-flex flex-wrap gap-3">
+          <a href="#mission" class="btn btn-teal btn-lg">Our Mission</a>
+          <a href="#team" class="btn btn-outline-teal btn-lg">Meet the Team</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main-content">
+    <!-- Stats Section -->
+    <section class="py-5">
+      <div class="container">
+        <div class="row g-4 text-center">
+          <div class="col-md-3 col-6 animate-fade animate-fade-in delay-1">
+            <div class="stat-number">60+</div>
+            <div class="stat-label">Destinations</div>
+          </div>
+          <div class="col-md-3 col-6 animate-fade animate-fade-in delay-2">
+            <div class="stat-number">50,000+</div>
+            <div class="stat-label">Happy Travelers</div>
+          </div>
+          <div class="col-md-3 col-6 animate-fade animate-fade-in delay-1">
+            <div class="stat-number">21</div>
+            <div class="stat-label">Years Experience</div>
+          </div>
+          <div class="col-md-3 col-6 animate-fade animate-fade-in delay-2">
+            <div class="stat-number">98%</div>
+            <div class="stat-label">Positive Reviews</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Mission Section -->
+    <section id="mission" class="py-5 bg-teal-light">
+      <div class="container">
+        <h2 class="section-title center mb-5">Our Mission</h2>
+        <div class="row align-items-center">
+          <div class="col-lg-6 mb-4 mb-lg-0 animate-fade animate-fade-in">
+            <p class="lead">To create transformative travel experiences that connect people with the world's most breathtaking landscapes and cultures.</p>
+            <p>Since 2002, we've been dedicated to crafting adventures that go beyond typical tourism. Our trips are designed to challenge, inspire, and create lasting memories while maintaining the highest standards of safety and sustainability.</p>
+            
+            <div class="mt-4">
+              <ul class="list-unstyled">
+                <li class="mb-2"><i class="bi bi-check-circle-fill text-teal me-2"></i> Certified sustainable tourism operator</li>
+                <li class="mb-2"><i class="bi bi-check-circle-fill text-teal me-2"></i> 100% local guide employment</li>
+                <li class="mb-2"><i class="bi bi-check-circle-fill text-teal me-2"></i> Carbon offset program for all trips</li>
+                <li class="mb-2"><i class="bi bi-check-circle-fill text-teal me-2"></i> Safety certified guides</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-6 animate-fade animate-fade-in delay-1">
+            <div class="position-relative">
+              <img src="https://images.unsplash.com/photo-1503220317375-aaad61436b1b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                   alt="Group of travelers hiking in mountains" 
+                   class="img-fluid rounded shadow" 
+                   loading="lazy">
+              <div class="position-absolute bottom-0 start-0 bg-white p-3 m-3 rounded shadow-sm">
+                <div class="d-flex align-items-center">
+                  <div class="bg-teal rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                    <i class="bi bi-quote text-white fs-4"></i>
+                  </div>
+                  <div class="ms-3">
+                    <p class="mb-0 fst-italic">"Life-changing adventures with responsible travel at their core."</p>
+                    <p class="mb-0 text-muted small">- National Geographic</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Story Timeline -->
+    <section class="py-5">
+      <div class="container">
+        <h2 class="section-title center mb-5">Our Journey</h2>
+        <div class="timeline">
+          <div class="timeline-item animate-fade animate-fade-in">
+            <h3>2002: Humble Beginnings</h3>
+            <p class="text-muted">Founded by outdoor enthusiasts with just three local hiking tours</p>
+          </div>
+          <div class="timeline-item animate-fade animate-fade-in delay-1">
+            <h3>2008: First International Trip</h3>
+            <p class="text-muted">Launched our inaugural international adventure to the Canadian Rockies</p>
+          </div>
+          <div class="timeline-item animate-fade animate-fade-in delay-2">
+            <h3>2012: Sustainability Commitment</h3>
+            <p class="text-muted">Became a certified B Corporation, pledging 1% of revenue to conservation</p>
+          </div>
+          <div class="timeline-item animate-fade animate-fade-in">
+            <h3>2018: National Geographic Partnership</h3>
+            <p class="text-muted">Recognized as a National Geographic Unique Lodge of the World</p>
+          </div>
+          <div class="timeline-item animate-fade animate-fade-in delay-1">
+            <h3>2023: 50,000+ Adventurers</h3>
+            <p class="text-muted">Celebrated serving over 50,000 travelers across six continents</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="py-5 bg-light">
+      <div class="container">
+        <h2 class="section-title center mb-5">Meet Our Team</h2>
+        <div class="row justify-content-center g-4">
+          <!-- Team Member 1 -->
+          <div class="col-lg-4 col-md-6 d-flex animate-fade animate-fade-in">
+            <div class="card team-member h-100 border-0 text-center p-4 shadow-sm">
+              <div class="mx-auto mb-4" style="width: 200px; height: 200px; overflow: hidden;">
+                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                     alt="Michael Kandira, Founder & CEO" 
+                     class="w-100 h-100 object-fit-cover rounded-circle border border-3 border-teal">
+              </div>
+              <h3 class="mb-2">Michael Kandira</h3>
+              <p class="text-teal fw-bold mb-3">Founder & CEO</p>
+              <p class="mb-4">With over 25 years of mountaineering experience, Michael ensures every trip meets our high standards.</p>
+              <div class="social-links mt-auto">
+                <a href="https://www.linkedin.com/in/michael-kandira" class="me-3" aria-label="Michael's LinkedIn" target="_blank">
+                  <i class="bi bi-linkedin"></i>
+                </a>
+                <a href="https://twitter.com/kandira" class="" aria-label="Michael's Twitter" target="_blank">
+                  <i class="bi bi-twitter-x"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Team Member 2 -->
+          <div class="col-lg-4 col-md-6 d-flex animate-fade animate-fade-in delay-1">
+            <div class="card team-member h-100 border-0 text-center p-4 shadow-sm">
+              <div class="mx-auto mb-4" style="width: 200px; height: 200px; overflow: hidden;">
+                <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                     alt="Sarah Chen, Co-Founder & COO" 
+                     class="w-100 h-100 object-fit-cover rounded-circle border border-3 border-teal">
+              </div>
+              <h3 class="mb-2">Sarah Chen</h3>
+              <p class="text-teal fw-bold mb-3">Co-Founder & COO</p>
+              <p class="mb-4">Sarah's background in sustainable tourism shapes our eco-friendly operations worldwide.</p>
+              <div class="social-links mt-auto">
+                <a href="https://www.linkedin.com/in/sarah-chen" class="me-3" aria-label="Sarah's LinkedIn" target="_blank">
+                  <i class="bi bi-linkedin"></i>
+                </a>
+                <a href="https://www.instagram.com/sarahchen" class="" aria-label="Sarah's Instagram" target="_blank">
+                  <i class="bi bi-instagram"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Team Member 3 -->
+          <div class="col-lg-4 col-md-6 d-flex animate-fade animate-fade-in delay-2">
+            <div class="card team-member h-100 border-0 text-center p-4 shadow-sm">
+              <div class="mx-auto mb-4" style="width: 200px; height: 200px; overflow: hidden;">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                     alt="Benjamin Ngugi, Head Guide" 
+                     class="w-100 h-100 object-fit-cover rounded-circle border border-3 border-teal">
+              </div>
+              <h3 class="mb-2">Benjamin Ngugi</h3>
+              <p class="text-teal fw-bold mb-3">Head Guide</p>
+              <p class="mb-4">Our most experienced guide with certifications in wilderness medicine and avalanche safety.</p>
+              <div class="social-links mt-auto">
+                <a href="https://www.instagram.com/benjaminngugi" class="me-3" aria-label="Benjamin's Instagram" target="_blank">
+                  <i class="bi bi-instagram"></i>
+                </a>
+                <a href="https://facebook.com/benjaminngugi" class="" aria-label="Benjamin's Facebook" target="_blank">
+                  <i class="bi bi-facebook"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="text-center mt-5 animate-fade animate-fade-in">
+          <a href="contact.html" class="btn btn-teal btn-lg px-5">Contact Our Team</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="py-5">
+      <div class="container">
+        <h2 class="section-title center mb-5">Our Core Values</h2>
+        <div class="row g-4">
+          <div class="col-md-4 animate-fade animate-fade-in">
+            <div class="card value-card h-100 border-0 shadow-sm">
+              <div class="card-body text-center p-4">
+                <div class="value-icon">
+                  <i class="bi bi-tree-fill"></i>
+                </div>
+                <h3>Sustainability</h3>
+                <p>We're committed to leaving destinations better than we found them through conservation partnerships.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 animate-fade animate-fade-in delay-1">
+            <div class="card value-card h-100 border-0 shadow-sm">
+              <div class="card-body text-center p-4">
+                <div class="value-icon">
+                  <i class="bi bi-people-fill"></i>
+                </div>
+                <h3>Community</h3>
+                <p>We work with local experts and businesses to ensure our trips benefit host communities.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 animate-fade animate-fade-in delay-2">
+            <div class="card value-card h-100 border-0 shadow-sm">
+              <div class="card-body text-center p-4">
+                <div class="value-icon">
+                  <i class="bi bi-shield-fill-check"></i>
+                </div>
+                <h3>Safety</h3>
+                <p>Our guides undergo rigorous training and all equipment meets international safety standards.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section class="py-5 bg-light">
+      <div class="container">
+        <h2 class="section-title center mb-5">Traveler Experiences</h2>
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="card border-0 shadow-sm mb-5">
+              <div class="card-body p-4">
+                <div class="d-flex align-items-center mb-4">
+                  <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" 
+                       alt="Emma Wilson" 
+                       class="rounded-circle me-3" 
+                       style="width: 60px; height: 60px; object-fit: cover;">
+                  <div>
+                    <h5 class="mb-0">Emma Wilson</h5>
+                    <p class="text-muted mb-0">Everest Base Camp Trek, 2023</p>
+                  </div>
+                </div>
+                <p class="mb-0">"The Everest Base Camp trek with Orya was the adventure of a lifetime. Our guide Benjamin was incredibly knowledgeable and made us feel safe every step of the way. The attention to detail and commitment to sustainable tourism made this trip truly special."</p>
+              </div>
+            </div>
+            
+            <div class="text-center">
+              <a href="explore.html" class="btn btn-teal btn-lg px-5">Explore Our Adventures</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 mb-4 mb-lg-0">
+          <h3 class="h5 footer-title">Orya Adventures</h3>
+          <p>Creating unforgettable experiences since 2002.</p>
+          <!-- Newsletter Form -->
+          <form class="mt-4">
+            <div class="input-group">
+              <input type="email" class="form-control" placeholder="Your email" required aria-label="Your email">
+              <button class="btn btn-teal" type="submit">Subscribe</button>
+            </div>
+            <small class="text-white-50">Get travel updates and deals</small>
+          </form>
+        </div>
+        <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+          <h4 class="h5 footer-title">Explore</h4>
+          <ul class="list-unstyled footer-links">
+            <li><a href="explore.html#mountains">Mountain Treks</a></li>
+            <li><a href="explore.html#beaches">Beach Getaways</a></li>
+            <li><a href="explore.html#cities">City Explorations</a></li>
+            <li><a href="explore.html">All Adventures</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+          <h4 class="h5 footer-title">Company</h4>
+          <ul class="list-unstyled footer-links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="about.html#team">Our Team</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4">
+          <h4 class="h5 footer-title">Connect With Us</h4>
+          <div class="social-links mb-4">
+            <a href="#" class="me-2" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="me-2" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="me-2" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" class="me-2" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+          </div>
+          <address class="mb-0">
+            <i class="bi bi-geo-alt-fill me-2"></i>123 Orya, Kilingili, SC 54321<br>
+            <i class="bi bi-telephone-fill me-2"></i>(803) 541-2345<br>
+            <i class="bi bi-envelope-fill me-2"></i>hello@oryaadventures.com
+          </address>
+        </div>
+      </div>
+      <hr class="my-4 bg-secondary">
+      <div class="text-center text-white-50">
+        <p class="mb-0">&copy; 2025 Orya Adventures. All rights reserved. | <a href="#" class="text-white-50">Privacy Policy</a> | <a href="#" class="text-white-50">Terms</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  
+  <script>
+    // Skip link functionality
+    document.querySelector('.skip-link').addEventListener('focus', function() {
+      this.style.transform = 'translateY(0)';
+    });
+    
+    // Navbar scroll effect
+    window.addEventListener('scroll', function() {
+      const navbar = document.querySelector('.navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+    
+    // Animation on scroll
+    document.addEventListener('DOMContentLoaded', function() {
+      const animatedElements = document.querySelectorAll('.animate-fade');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-fade-in');
+          }
+        });
+      }, {
+        threshold: 0.1
+      });
+      
+      animatedElements.forEach(element => {
+        observer.observe(element);
+      });
+    });
+  </script>
+</body>
+</html>
