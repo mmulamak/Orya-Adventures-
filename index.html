@@ -26,11 +26,17 @@
     
     .adventure-card {
       transition: all 0.3s ease;
+      height: 100%;
     }
     
     .adventure-card:hover {
       transform: translateY(-10px);
       box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+    
+    .adventure-card img {
+      height: 250px;
+      object-fit: cover;
     }
     
     .floating {
@@ -41,6 +47,13 @@
       0% { transform: translateY(0); }
       50% { transform: translateY(-15px); }
       100% { transform: translateY(0); }
+    }
+    
+    .featured-badge {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      z-index: 2;
     }
   </style>
 </head>
@@ -65,16 +78,16 @@
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Explore</a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="explore.html#mountains">Mountain Treks</a></li>
-              <li><a class="dropdown-item" href="explore.html#beaches">Beach Getaways</a></li>
-              <li><a class="dropdown-item" href="explore.html#cities">City Explorations</a></li>
+              <li><a class="dropdown-item" href="pages/explore.html#mountains">Mountain Treks</a></li>
+              <li><a class="dropdown-item" href="pages/explore.html#beaches">Beach Getaways</a></li>
+              <li><a class="dropdown-item" href="pages/explore.html#cities">City Explorations</a></li>
             </ul>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="about.html">About</a>
+            <a class="nav-link" href="pages/about.html">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="contact.html">Contact</a>
+            <a class="nav-link" href="pages/contact.html">Contact</a>
           </li>
         </ul>
       </div>
@@ -92,8 +105,8 @@
         <h1 class="display-3 fw-bold mb-4 animate__animated animate__fadeInDown position-relative">Discover Your Next Adventure</h1>
         <p class="lead mb-5 animate__animated animate__fadeIn animate__delay-1s position-relative">Experience the world's most breathtaking destinations with our expert guides</p>
         <div class="d-flex gap-3 animate__animated animate__fadeIn animate__delay-2s position-relative">
-          <a href="explore.html" class="btn btn-dark btn-lg px-4">Explore Trips</a>
-          <a href="#featured" class="btn btn-outline-light btn-lg px-4">Learn More</a>
+          <a href="pages/explore.html" class="btn btn-dark btn-lg px-4">Explore Trips</a>
+          <a href="#featured" class="btn btn-outline-light btn-lg px-4">Featured Adventures</a>
         </div>
       </div>
     </div>
@@ -107,46 +120,46 @@
       <div class="container">
         <h2 class="text-center mb-5">Featured Adventures</h2>
         <div class="row g-4">
-          <!-- Adventure 1 -->
+          <!-- Mountain Adventure -->
           <div class="col-md-4">
-            <div class="card adventure-card h-100 border-0 shadow">
-              <img src="images/mountain-trek.jpg" class="card-img-top" alt="mountains" loading="lazy">
+            <div class="card adventure-card h-100 border-0 shadow position-relative">
+              <span class="featured-badge badge bg-teal">Bestseller</span>
+              <img src="images/mountain-trek.jpg" class="card-img-top" alt="Majestic mountain landscape" loading="lazy">
               <div class="card-body">
                 <h3 class="card-title">Mountain Explorer</h3>
-                <p class="card-text">7-day trek through the breathtaking Swiss Alps with expert guides.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <span class="badge bg-teal">Bestseller</span>
-                  <a href="explore.html#mountains" class="btn btn-sm btn-outline-teal">Details</a>
+                <p class="card-text">Challenge yourself with breathtaking alpine treks where crisp mountain air fills your lungs and panoramic views reward your efforts. Our expert guides will lead you safely through stunning landscapes.</p>
+                <div class="mt-auto pt-3">
+                  <a href="pages/explore.html#mountains" class="btn btn-outline-teal w-100">Explore Mountain Trips</a>
                 </div>
               </div>
             </div>
           </div>
           
-          <!-- Adventure 2 -->
+          <!-- Beach Adventure -->
           <div class="col-md-4">
-            <div class="card adventure-card h-100 border-0 shadow">
-              <img src="images/sitting.jpg" class="card-img-top" alt="People sunbathing at the beach " loading="lazy">
+            <div class="card adventure-card h-100 border-0 shadow position-relative">
+              <span class="featured-badge badge bg-teal">New</span>
+              <img src="images/sitting.jpg" class="card-img-top" alt="People relaxing on a beach" loading="lazy">
               <div class="card-body">
                 <h3 class="card-title">Island Paradise</h3>
-                <p class="card-text">5-day luxury beach getaway in the Maldives with private bungalows.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <span class="badge bg-teal">New</span>
-                  <a href="explore.html#beaches" class="btn btn-sm btn-outline-teal">Details</a>
+                <p class="card-text">Unwind on powder-soft sands with crystal-clear waters lapping at your feet. Our luxury beach getaways offer the perfect blend of relaxation and adventure in the world's most stunning tropical locations.</p>
+                <div class="mt-auto pt-3">
+                  <a href="pages/explore.html#beaches" class="btn btn-outline-teal w-100">Explore Beach Getaways</a>
                 </div>
               </div>
             </div>
           </div>
           
-          <!-- Adventure 3 -->
+          <!-- City Adventure -->
           <div class="col-md-4">
-            <div class="card adventure-card h-100 border-0 shadow">
-              <img src="images/cityscape .jpg" class="card-img-top" alt="Tokyo street" loading="lazy">
+            <div class="card adventure-card h-100 border-0 shadow position-relative">
+              <span class="featured-badge badge bg-teal">Limited</span>
+              <img src="images/cityscape .jpg" class="card-img-top" alt="Vibrant city skyline at night" loading="lazy">
               <div class="card-body">
                 <h3 class="card-title">Urban Explorer</h3>
-                <p class="card-text">4-day cultural immersion in Tokyo's vibrant neighborhoods.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <span class="badge bg-teal">Limited</span>
-                  <a href="explore.html#cities" class="btn btn-sm btn-outline-teal">Details</a>
+                <p class="card-text">Immerse yourself in vibrant cultures, iconic landmarks, and hidden local gems. Our city tours offer authentic experiences that go beyond typical tourist attractions.</p>
+                <div class="mt-auto pt-3">
+                  <a href="pages/explore.html#cities" class="btn btn-outline-teal w-100">Explore City Tours</a>
                 </div>
               </div>
             </div>
@@ -202,7 +215,7 @@
           </div>
           <div class="col-lg-6">
             <div class="ratio ratio-16x9">
-              <img src="images/alpine.jpg" class="img-fluid rounded shadow" alt="Alpine mounatin" loading="lazy">
+              <img src="images/alpine.jpg" class="img-fluid rounded shadow" alt="Alpine mountain landscape" loading="lazy">
             </div>
           </div>
         </div>
@@ -318,15 +331,15 @@
         <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
           <h4 class="h5 mb-3">Explore</h4>
           <ul class="list-unstyled">
-            <li class="mb-2"><a href="explore.html#mountains" class="text-white-50">Mountain Treks</a></li>
-            <li class="mb-2"><a href="explore.html#beaches" class="text-white-50">Beach Getaways</a></li>
-            <li class="mb-2"><a href="explore.html#cities" class="text-white-50">City Explorations</a></li>
+            <li class="mb-2"><a href="pages/explore.html#mountains" class="text-white-50">Mountain Treks</a></li>
+            <li class="mb-2"><a href="pages/explore.html#beaches" class="text-white-50">Beach Getaways</a></li>
+            <li class="mb-2"><a href="pages/explore.html#cities" class="text-white-50">City Explorations</a></li>
           </ul>
         </div>
         <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
           <h4 class="h5 mb-3">Company</h4>
           <ul class="list-unstyled">
-            <li class="mb-2"><a href="about.html" class="text-white-50">About Us</a></li>
+            <li class="mb-2"><a href="pages/about.html" class="text-white-50">About Us</a></li>
             <li class="mb-2"><a href="#" class="text-white-50">Our Team</a></li>
             <li class="mb-2"><a href="#" class="text-white-50">Careers</a></li>
           </ul>
