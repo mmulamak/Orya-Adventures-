@@ -1,24 +1,30 @@
-# Features
+## Key Implementations
+1. **Responsive Google Maps Integration**
+   - Custom aspect ratio container technique
+   - Full-width responsive embedding
+   - Lazy loading for performance
+   - Cross-browser compatible styling
 
-- **Modern UI/UX**
-  - Bootstrap 5 responsive design
-  - Interactive adventure cards with hover effects
-  - Accessible navigation (labels and skip links)
+2. **Interactive Contact Form**
+   - Custom checkbox styling
+   - Required field validation
+   - Newsletter subscription option
+   - Responsive layout adjustments
 
-- **Engaging Sections**
-  - Featured adventures with image overlays
-  - Team profiles with circular avatars
-  - Testimonials with rounded portraits
-  - Animated call-to-action buttons
+3. **Accessibility Features**
+   - Semantic HTML structure
+   - ARIA labels where appropriate
+   - Focus states for keyboard navigation
+   - Color contrast compliance
 
-- **Technical Highlights**
-  - Semantic HTML5
-  - CSS animations and transitions
-  - Mobile-first approach
+4. **Performance Optimizations**
+   - Efficient CSS animations
+   - Lazy-loaded map embedding
+   - Optimized image assets
+   - Minified production assets
 
-## Technologies Used
-Bootstrap 
-HTML & CSS
-
-
-
+## Contact Section Details
+- **Phone Support**: Toll-free and local numbers with emergency line
+- **Email Categories**: General, Support, Bookings
+- **Business Hours**: Detailed schedule with EST timezone
+- **Location**: Kilingili, SC(via Google Maps)
